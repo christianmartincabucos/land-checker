@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
 import { Map } from './components/Map';
 import { Filter } from './components/Filter';
 import { PropertyService } from './services/PropertyService';

@@ -16,7 +16,7 @@ export const Filter: React.FC<FilterProps> = ({ councils, onFilterChange }) => {
   return (
     <div>
       <label htmlFor="council-filter">Filter by Council:</label>
-      <select id="council-filter" value={selectedCouncil} onChange={handleChange}>
+      <select id="council-filter" className="select select-primary w-full max-w-xs" value={selectedCouncil} onChange={handleChange}>
         <option value="">--Please choose a council--</option>
         {councils?.map((council) => (
           <option key={council} value={council}>
