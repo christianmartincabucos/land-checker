@@ -31,10 +31,10 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <main className="relative h-screen p-5">
       <Filter councils={councils} onFilterChange={handleFilterChange} />
       <Map properties={filteredProperties} />
-    </div>
+    </main>
   );
 }
 

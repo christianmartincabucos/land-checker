@@ -2,6 +2,7 @@
 import React from 'react';
 import { Marker, InfoWindow } from '@react-google-maps/api';
 import { Property } from '../models/Property';
+import PropertyDetails from './PropertyDetails';
 
 interface PropertyMarkerProps {
   property: Property;
@@ -11,7 +12,7 @@ interface PropertyMarkerProps {
 }
 
 const PropertyMarker: React.FC<PropertyMarkerProps> = ({ property, onMarkerClick, selectedProperty, onCloseClick }) => {
-  const { latitude, longitude, full_address, council, postcode } = property;
+  const { latitude, longitude } = property;
   const position = { lat: latitude, lng: longitude };
 
   return (
@@ -24,11 +25,7 @@ const PropertyMarker: React.FC<PropertyMarkerProps> = ({ property, onMarkerClick
           position={position}
           onCloseClick={onCloseClick}
         >
-          <div>
-            <h2>{full_address}</h2>
-            <p>{council}</p>
-            <p>{postcode}</p>
-          </div>
+          <PropertyDetails property={property}/>
         </InfoWindow>
       )}
     </Marker>

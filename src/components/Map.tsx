@@ -7,7 +7,8 @@ import { Property } from '../models/Property';
 
 const containerStyle = {
   width: '100vw',
-  height: '100vh'
+  height: '90vh',
+  borderRadius: '10px'
 };
 
 interface MapProps {
@@ -43,22 +44,25 @@ export const Map: React.FC<MapProps> = ({ properties }) => {
   
 
   return (
-    <LoadScript googleMapsApiKey={googleMapsApiKey}>
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={coordinates || (properties[0] ? { lat: properties[0].latitude, lng: properties[0].longitude } : undefined)}
-        zoom={10}
-      >
-        {properties.map((property, index) => (
-          <PropertyMarker 
-            key={index} 
-            property={property} 
-            onMarkerClick={handleMarkerClick} 
-            selectedProperty={selectedProperty} 
-            onCloseClick={handleCloseClick}
-          />
-        ))}
-      </GoogleMap>
-    </LoadScript>
+    <div className="flex w-full">
+      <LoadScript googleMapsApiKey={googleMapsApiKey}>
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={coordinates || (properties[0] ? { lat: properties[0].latitude, lng: properties[0].longitude } : undefined)}
+          zoom={10}
+        >
+          {properties.map((property, index) => (
+            <PropertyMarker 
+              key={index} 
+              property={property} 
+              onMarkerClick={handleMarkerClick} 
+              selectedProperty={selectedProperty} 
+              onCloseClick={handleCloseClick}
+            />
+          ))}
+        </GoogleMap>
+      </LoadScript>
+    </div>
+
   );
 }

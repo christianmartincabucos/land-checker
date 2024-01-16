@@ -1,4 +1,3 @@
-// src/services/PropertyService.ts
 import { Property } from '../models/Property';
 import { Properties } from '../data/properties';
 
