@@ -1,4 +1,3 @@
-// PropertyMarker.tsx
 import { InfoWindow, Marker } from '@react-google-maps/api';
 import React from 'react';
 import { Property } from '../models/Property';
