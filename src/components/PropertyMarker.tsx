@@ -1,6 +1,6 @@
 // PropertyMarker.tsx
+import { InfoWindow, Marker } from '@react-google-maps/api';
 import React from 'react';
-import { Marker, InfoWindow } from '@react-google-maps/api';
 import { Property } from '../models/Property';
 import PropertyDetails from './PropertyDetails';
 

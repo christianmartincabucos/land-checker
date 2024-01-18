@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
-import { Map } from './components/Map';
 import { Filter } from './components/Filter';
-import { PropertyService } from './services/PropertyService';
+import { Map } from './components/Map';
 import { Property } from './models/Property';
+import { PropertyService } from './services/PropertyService';
 
 
 const App = () => {

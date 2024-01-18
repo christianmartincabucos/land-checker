@@ -1,7 +1,6 @@
 // Map.tsx
-import React, { useState } from 'react';
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
-import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+import React, { useState } from 'react';
 import PropertyMarker from '../components/PropertyMarker';
 import { Property } from '../models/Property';
 
@@ -17,8 +16,8 @@ interface MapProps {
 
 export const Map: React.FC<MapProps> = ({ properties }) => {
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
-  const [address, setAddress] = useState<string>("");
-  const [coordinates, setCoordinates] = useState<{ lat: number, lng: number } | null>(null);
+  // const [address, setAddress] = useState<string>("");
+  // const [coordinates, setCoordinates] = useState<{ lat: number, lng: number } | null>(null);
 
   const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
@@ -48,7 +47,7 @@ export const Map: React.FC<MapProps> = ({ properties }) => {
       <LoadScript googleMapsApiKey={googleMapsApiKey}>
         <GoogleMap
           mapContainerStyle={containerStyle}
-          center={coordinates || (properties[0] ? { lat: properties[0].latitude, lng: properties[0].longitude } : undefined)}
+          center={properties[0] ? { lat: properties[0].latitude, lng: properties[0].longitude } : undefined}
           zoom={10}
         >
           {properties.map((property, index) => (
